@@ -9,7 +9,7 @@ Here's a simple example of how React components work with state:
 \`\`\`jsx
 function Counter() {
   const [count, setCount] = useState(0);
-
+  
   return (
     <div>
       <p>Count: {count}</p>
@@ -83,7 +83,7 @@ const processMarkdown = (text) => {
   return result;
 };
 
-const VisualizerPanel = ({ side, tps, isGenerating }) => {
+const VisualizerPanel = ({ side, tps, setTps, isGenerating }) => {
   const [output, setOutput] = useState('');
   const intervalRef = useRef(null);
   const lastUpdateRef = useRef(0);
@@ -121,15 +121,15 @@ const VisualizerPanel = ({ side, tps, isGenerating }) => {
         <input
           type="number"
           value={tps}
-          readOnly
+          onChange={(e) => setTps(Number(e.target.value))}
           className="flex-1 rounded-lg bg-zinc-800 border border-zinc-700 text-white px-4 py-2"
           placeholder="Tokens per second"
         />
       </div>
-
+      
       <div className="flex-1 bg-zinc-800 border border-zinc-700 rounded-lg relative">
         <div className="absolute inset-0 p-4">
-          <div
+          <div 
             className="font-mono text-sm whitespace-pre-wrap absolute inset-4 overflow-y-auto"
             style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
@@ -156,8 +156,8 @@ const TokensPerSecondVisualizer = () => {
             setIsGenerating(!isGenerating);
           }}
           className={`px-4 py-2 rounded-lg font-medium ${
-            isGenerating
-              ? 'bg-red-500 hover:bg-red-600'
+            isGenerating 
+              ? 'bg-red-500 hover:bg-red-600' 
               : 'bg-blue-500 hover:bg-blue-600'
           } text-white transition-colors`}
         >
@@ -166,10 +166,10 @@ const TokensPerSecondVisualizer = () => {
       </div>
       <div className="flex flex-1 divide-x divide-zinc-700">
         <div className="w-1/2 p-4">
-          <VisualizerPanel side="left" tps={leftTps} isGenerating={isGenerating} />
+          <VisualizerPanel side="left" tps={leftTps} setTps={setLeftTps} isGenerating={isGenerating} />
         </div>
         <div className="w-1/2 p-4">
-          <VisualizerPanel side="right" tps={rightTps} isGenerating={isGenerating} />
+          <VisualizerPanel side="right" tps={rightTps} setTps={setRightTps} isGenerating={isGenerating} />
         </div>
       </div>
     </div>
