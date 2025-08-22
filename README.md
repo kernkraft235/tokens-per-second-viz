@@ -1,8 +1,21 @@
-# React + Vite
+> ![NOTE] PROGRESS PAUSED
+> I am not actively working on this, and don't remember it's status except for that it kinda worked but then got janky when I tried adding on-demand simulated outputs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It's janky and doesn't really work as intended. Might revisit later
 
-Currently, two official plugins are available:
+# Plan (not actual status)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Side by side comparison of what "tokens per second" outputs from LLMs look like.
+- Output realistic but simulated outputs (but I had issues getting it to do that on the fly)
+  - Probably would make more sense to create a feature that allowed you to paste in the desired output
+  - Or make some "presets" like
+    - Code
+    - Multi-step technical w/ multiple code blocks
+    - Well formatted non-code markdown article
+    - Long-ass "Deep Research"
+  -  Or actually prompt an LLM with streaming off, then fake stream the results side by side at the desired speeds
+- Offer Statistics like:
+  - Total time to finish output
+  - Time to fill visible area of chat
+  - What multiplier the output is to average reading speed (allow user to define)
+  
