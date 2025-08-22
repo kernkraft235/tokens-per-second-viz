@@ -1,7 +1,7 @@
-> ![NOTE] PROGRESS PAUSED
-> I am not actively working on this, and don't remember it's status except for that it kinda worked but then got janky when I tried adding on-demand simulated outputs
+> [!CAUTION]
+> ### PROGRESS PAUSED
+> I am not actively working on this, and don't remember it's status except for that it kinda worked but then got janky when I tried adding on-demand simulated outputs. Might revisit later. It can probably become what it was intended to become with the improved vibe coding as of Aug 2025
 
-It's janky and doesn't really work as intended. Might revisit later
 
 # Plan (not actual status)
 
